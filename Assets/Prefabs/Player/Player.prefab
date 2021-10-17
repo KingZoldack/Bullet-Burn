@@ -180,6 +180,7 @@ GameObject:
   - component: {fileID: 312809697737400317}
   - component: {fileID: 312809697729232701}
   - component: {fileID: 312809697722812793}
+  - component: {fileID: 1063681564}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -301,6 +302,20 @@ MonoBehaviour:
     slowDownRate: 20
     airControl: 0
     shellOffset: 0
+--- !u!114 &1063681564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 312809697734081691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: affd66beb5fadc94396622d6f783b285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 100
+  _currentHealth: 0
 --- !u!1 &8464957237454372643
 GameObject:
   m_ObjectHideFlags: 0
@@ -419,6 +434,12 @@ PrefabInstance:
       propertyPath: _FPCamera
       value: 
       objectReference: {fileID: 312809697732443837}
+    - target: {fileID: 7951268777339734425, guid: c230c3c7a76675d489e2e3f1bde199c3,
+        type: 3}
+      propertyPath: _hitEffect
+      value: 
+      objectReference: {fileID: 1772738262270883051, guid: 5a62588c34ac1014aa8d81de0d89c546,
+        type: 3}
     - target: {fileID: 7951268777339734425, guid: c230c3c7a76675d489e2e3f1bde199c3,
         type: 3}
       propertyPath: _muzzleFlash

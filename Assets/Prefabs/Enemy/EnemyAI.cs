@@ -11,13 +11,16 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] Color _radiusColor;
 
     NavMeshAgent _navMeshAgent;
+    Animator _anim;
 
     float _distanceToTarget = Mathf.Infinity;
     bool _isProvoked;
+    float _rotationSpeed= 5f;
 
     private void Awake()
     {
         _navMeshAgent = GetComponent<NavMeshAgent>();
+        _anim = GetComponent<Animator>();
     }
 
     void Start()
@@ -43,6 +46,8 @@ public class EnemyAI : MonoBehaviour
 
     void EngageTarget()
     {
+        //transform.LookAt(_target);
+        LookAtPlayer();
         if (_distanceToTarget >= _navMeshAgent.stoppingDistance)
         {
             ChaseTarget();
@@ -54,14 +59,32 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
+    void LookAtPlayer()
+    {
+        var time = Time.time;
+        Vector3 direction = (_target.position - transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+        Quaternion.Slerp(lookRotation, transform.rotation, _rotationSpeed * time);
+        time += Time.deltaTime;
+    }
+
     void ChaseTarget()
     {
+        //LookAtPlayer();
+
+        //transform.LookAt(_target);
+        _anim.SetBool(Tags.ENEMY_ATTACK_TAG, false);
+        _anim.SetTrigger(Tags.ENEMY_MOVE_TAG);
         _navMeshAgent.SetDestination(_target.position);
     }
 
     void AttackTarget()
     {
-        Debug.Log("Attacking Player");
+        //LookAtPlayer();
+
+        //transform.LookAt(_target);
+
+        _anim.SetBool(Tags.ENEMY_ATTACK_TAG, true);
     }
 
     private void OnDrawGizmosSelected()
