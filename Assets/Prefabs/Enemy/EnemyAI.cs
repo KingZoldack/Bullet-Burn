@@ -61,11 +61,10 @@ public class EnemyAI : MonoBehaviour
 
     void LookAtPlayer()
     {
-        var time = Time.time;
+        
         Vector3 direction = (_target.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-        Quaternion.Slerp(lookRotation, transform.rotation, _rotationSpeed * time);
-        time += Time.deltaTime;
+        Quaternion.Slerp(lookRotation, transform.rotation, _rotationSpeed * Time.deltaTime);
     }
 
     void ChaseTarget()
