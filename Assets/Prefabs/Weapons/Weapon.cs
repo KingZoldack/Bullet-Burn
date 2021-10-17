@@ -6,6 +6,9 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     [SerializeField] Camera _FPCamera;
+    [SerializeField] GameObject _hitEffect;
+    [SerializeField] ParticleSystem _muzzleFlash;
+    [SerializeField] float _bulletImapctLiftime = 0.1f;
     [SerializeField] float _range = 100f;
     [SerializeField] float _clipperBulletDamage = 20f;
 
@@ -19,9 +22,21 @@ public class Weapon : MonoBehaviour
 
     void Shoot()
     {
+        ProcessMuzzleFlash();
+        ProcessRaycast();
+    }
+
+    private void ProcessMuzzleFlash()
+    {
+        _muzzleFlash.Play();
+    }
+
+    private void ProcessRaycast()
+    {
         RaycastHit hit;
         if (Physics.Raycast(_FPCamera.transform.position, _FPCamera.transform.forward, out hit, _range))
         {
+            CreateHitImpact(hit);
             Debug.Log($"{hit.transform.name} was shot at.");
             EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
             if (target == null) return;
@@ -32,5 +47,11 @@ public class Weapon : MonoBehaviour
         {
             return;
         }
+    }
+
+    void CreateHitImpact(RaycastHit hit)
+    {
+        var impact = Instantiate(_hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
+        Destroy(impact, _bulletImapctLiftime);
     }
 }
