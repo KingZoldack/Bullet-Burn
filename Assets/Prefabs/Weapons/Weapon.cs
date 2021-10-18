@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
+    [SerializeField] Ammo _ammoSlot;
     [SerializeField] Camera _FPCamera;
     [SerializeField] GameObject _hitEffect;
     [SerializeField] ParticleSystem _muzzleFlash;
@@ -22,8 +23,12 @@ public class Weapon : MonoBehaviour
 
     void Shoot()
     {
-        ProcessMuzzleFlash();
-        ProcessRaycast();
+        if (_ammoSlot._ammoAmount > 0)
+        {
+            _ammoSlot.DecreaseCurrentAmmo();
+            ProcessMuzzleFlash();
+            ProcessRaycast();
+        }
     }
 
     private void ProcessMuzzleFlash()

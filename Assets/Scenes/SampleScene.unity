@@ -303,7 +303,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 5f9b176058917ba49a8059f6da098866, type: 3}
       propertyPath: m_Name
-      value: grimbrand
+      value: grimbrand (SPR Mini)
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5f9b176058917ba49a8059f6da098866, type: 3}
       propertyPath: m_LocalPosition.x
