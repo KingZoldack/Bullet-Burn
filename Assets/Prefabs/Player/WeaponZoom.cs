@@ -20,7 +20,7 @@ public class WeaponZoom : MonoBehaviour
 
     private void Awake()
     {
-        _fpsController = GetComponent<RigidbodyFirstPersonController>();
+        _fpsController = GetComponentInParent<RigidbodyFirstPersonController>();
     }
     // Start is called before the first frame update
     void Start()

@@ -182,7 +182,6 @@ GameObject:
   - component: {fileID: 312809697722812793}
   - component: {fileID: 1063681564}
   - component: {fileID: 704475155}
-  - component: {fileID: 6764610829194636288}
   - component: {fileID: 1958476347444759989}
   m_Layer: 0
   m_Name: Player
@@ -332,23 +331,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameOverCanvas: {fileID: 0}
---- !u!114 &6764610829194636288
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 312809697734081691}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e8be1853c829184ea69be586435d778, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _mainCamera: {fileID: 312809697732443837}
-  _zoomedOut: 60
-  _zoomedIn: 20
-  _zoomedOutSens: 2
-  _zoomedInSens: 0.5
 --- !u!114 &1958476347444759989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -379,8 +361,9 @@ MonoBehaviour:
     type: 3}
   _muzzleFlash: {fileID: 370994601340059242}
   _bulletImapctLiftime: 0.1
-  _range: 100
-  _clipperBulletDamage: 20
+  _range: 40
+  _clipperBulletDamage: 10
+  _timeBetweenShots: 0.1
 --- !u!114 &7501401808923282762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -399,8 +382,9 @@ MonoBehaviour:
     type: 3}
   _muzzleFlash: {fileID: 1613439914672269235}
   _bulletImapctLiftime: 0.1
-  _range: 100
-  _clipperBulletDamage: 20
+  _range: 10
+  _clipperBulletDamage: 60
+  _timeBetweenShots: 2
 --- !u!1 &8464957237454372643
 GameObject:
   m_ObjectHideFlags: 0
@@ -516,6 +500,21 @@ PrefabInstance:
       propertyPath: _FPCamera
       value: 
       objectReference: {fileID: 312809697732443837}
+    - target: {fileID: 7951268777339734425, guid: c230c3c7a76675d489e2e3f1bde199c3,
+        type: 3}
+      propertyPath: _range
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7951268777339734425, guid: c230c3c7a76675d489e2e3f1bde199c3,
+        type: 3}
+      propertyPath: _timeBetweenShots
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2336320776358341642, guid: c230c3c7a76675d489e2e3f1bde199c3,
+        type: 3}
+      propertyPath: _mainCamera
+      value: 
+      objectReference: {fileID: 312809697732443837}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c230c3c7a76675d489e2e3f1bde199c3, type: 3}
 --- !u!4 &2186146534719249196 stripped
@@ -536,45 +535,40 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boomer
       objectReference: {fileID: 0}
-    - target: {fileID: 2999024217164763642, guid: 5c2b4f9f55da93446993004472191632,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2999024217164467674, guid: 5c2b4f9f55da93446993004472191632,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.207181
+      value: 0.21100006
       objectReference: {fileID: 0}
     - target: {fileID: 2999024217164467674, guid: 5c2b4f9f55da93446993004472191632,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5802084
+      value: 0.58
       objectReference: {fileID: 0}
     - target: {fileID: 2999024217164467674, guid: 5c2b4f9f55da93446993004472191632,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.37371218
+      value: 0.25200027
       objectReference: {fileID: 0}
     - target: {fileID: 2999024217164467674, guid: 5c2b4f9f55da93446993004472191632,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.7063883
+      value: 0.7096811
       objectReference: {fileID: 0}
     - target: {fileID: 2999024217164467674, guid: 5c2b4f9f55da93446993004472191632,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.011290371
+      value: -0.015173344
       objectReference: {fileID: 0}
     - target: {fileID: 2999024217164467674, guid: 5c2b4f9f55da93446993004472191632,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.011166666
+      value: 0.0152015705
       objectReference: {fileID: 0}
     - target: {fileID: 2999024217164467674, guid: 5c2b4f9f55da93446993004472191632,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7076465
+      value: 0.7041957
       objectReference: {fileID: 0}
     - target: {fileID: 2999024217164467674, guid: 5c2b4f9f55da93446993004472191632,
         type: 3}
@@ -584,17 +578,17 @@ PrefabInstance:
     - target: {fileID: 2999024217164467674, guid: 5c2b4f9f55da93446993004472191632,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 86.72201
+      value: 90.44299
       objectReference: {fileID: 0}
     - target: {fileID: 2999024217164467674, guid: 5c2b4f9f55da93446993004472191632,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -11.985001
+      value: -1.526001
       objectReference: {fileID: 0}
     - target: {fileID: 2999024217164467674, guid: 5c2b4f9f55da93446993004472191632,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 1.616
+      value: 0.9359894
       objectReference: {fileID: 0}
     - target: {fileID: 5756184070163046704, guid: 5c2b4f9f55da93446993004472191632,
         type: 3}
@@ -647,6 +641,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SPR Mini
+      objectReference: {fileID: 0}
+    - target: {fileID: 4628999239071924087, guid: 2a8f1e136136b87409c75f032db7aa98,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4628999239071490903, guid: 2a8f1e136136b87409c75f032db7aa98,
         type: 3}
@@ -773,6 +772,11 @@ PrefabInstance:
       propertyPath: ShapeModule.radius.value
       value: 0.0001
       objectReference: {fileID: 0}
+    - target: {fileID: 3085603488985862613, guid: 2a8f1e136136b87409c75f032db7aa98,
+        type: 3}
+      propertyPath: _mainCamera
+      value: 
+      objectReference: {fileID: 312809697732443837}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a8f1e136136b87409c75f032db7aa98, type: 3}
 --- !u!1 &2848432845769349397 stripped

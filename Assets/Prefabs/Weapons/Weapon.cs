@@ -12,23 +12,30 @@ public class Weapon : MonoBehaviour
     [SerializeField] float _bulletImapctLiftime = 0.1f;
     [SerializeField] float _range = 100f;
     [SerializeField] float _clipperBulletDamage = 20f;
+    [SerializeField] float _timeBetweenShots;
+
+    bool _canShoot = true;
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetMouseButtonDown(0) && _canShoot)
         {
-            Shoot();
+            StartCoroutine(Shoot());
         }
     }
 
-    void Shoot()
+    IEnumerator Shoot()
     {
+        //Add SMG fire rate functionality.
+        _canShoot = false;
         if (_ammoSlot._ammoAmount > 0)
         {
             _ammoSlot.DecreaseCurrentAmmo();
             ProcessMuzzleFlash();
             ProcessRaycast();
         }
+        yield return new WaitForSeconds(_timeBetweenShots);
+        _canShoot = true;
     }
 
     private void ProcessMuzzleFlash()
