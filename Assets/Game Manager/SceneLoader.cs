@@ -29,6 +29,5 @@ public class SceneLoader : MonoBehaviour
         _currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
         SceneManager.LoadScene(_currentSceneIndex);
-        Time.timeScale = 1;
     }
 }

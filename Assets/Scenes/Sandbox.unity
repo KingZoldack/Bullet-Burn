@@ -1524,12 +1524,6 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
---- !u!4 &704475154 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 312809697733976255, guid: ce233b95352b4f8488aa4dff5fe30354,
-    type: 3}
-  m_PrefabInstance: {fileID: 312809697412087167}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &761912953
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4005,10 +3999,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 704475155, guid: ce233b95352b4f8488aa4dff5fe30354, type: 3}
-      propertyPath: _gameOverCanvas
-      value: 
-      objectReference: {fileID: 1062024925}
+    - target: {fileID: 1063681564, guid: ce233b95352b4f8488aa4dff5fe30354, type: 3}
+      propertyPath: _maxHealth
+      value: 100000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce233b95352b4f8488aa4dff5fe30354, type: 3}
 --- !u!1001 &4210545091570408319
@@ -4078,10 +4072,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4253027350007068211, guid: 259ecd77e473fe34799cd40ebb852917,
-        type: 3}
-      propertyPath: _target
-      value: 
-      objectReference: {fileID: 704475154}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 259ecd77e473fe34799cd40ebb852917, type: 3}

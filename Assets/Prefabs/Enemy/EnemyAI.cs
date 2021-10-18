@@ -54,11 +54,6 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    public void OnDamaged()
-    {
-        _isProvoked = true;
-    }
-
     void LookAtPlayer()
     {
         

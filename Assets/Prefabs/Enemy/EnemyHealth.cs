@@ -34,8 +34,6 @@ public class EnemyHealth : MonoBehaviour
 
     public void TakeDamage(float Damage)
     {
-        BroadcastMessage("OnDamaged");
-
         _currentHealth -= Damage;
 
         if (_currentHealth < 1f)
