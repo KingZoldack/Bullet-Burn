@@ -414,118 +414,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -3.255005
       objectReference: {fileID: 0}
-    - target: {fileID: 667530279663149154, guid: c230c3c7a76675d489e2e3f1bde199c3,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 667530279663149154, guid: c230c3c7a76675d489e2e3f1bde199c3,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 667530279663149154, guid: c230c3c7a76675d489e2e3f1bde199c3,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 7951268777339734425, guid: c230c3c7a76675d489e2e3f1bde199c3,
         type: 3}
       propertyPath: _FPCamera
       value: 
       objectReference: {fileID: 312809697732443837}
-    - target: {fileID: 7951268777339734425, guid: c230c3c7a76675d489e2e3f1bde199c3,
-        type: 3}
-      propertyPath: _hitEffect
-      value: 
-      objectReference: {fileID: 1772738262270883051, guid: 5a62588c34ac1014aa8d81de0d89c546,
-        type: 3}
-    - target: {fileID: 7951268777339734425, guid: c230c3c7a76675d489e2e3f1bde199c3,
-        type: 3}
-      propertyPath: _muzzleFlash
-      value: 
-      objectReference: {fileID: 766568302751380824}
-    - target: {fileID: 136093745837631833, guid: c230c3c7a76675d489e2e3f1bde199c3,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.006309816
-      objectReference: {fileID: 0}
-    - target: {fileID: 136093745837631833, guid: c230c3c7a76675d489e2e3f1bde199c3,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.651508
-      objectReference: {fileID: 0}
-    - target: {fileID: 136093745837631833, guid: c230c3c7a76675d489e2e3f1bde199c3,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.7585188
-      objectReference: {fileID: 0}
-    - target: {fileID: 136093745837631833, guid: c230c3c7a76675d489e2e3f1bde199c3,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -0.012116223
-      objectReference: {fileID: 0}
-    - target: {fileID: 136093745837631833, guid: c230c3c7a76675d489e2e3f1bde199c3,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.013
-      objectReference: {fileID: 0}
-    - target: {fileID: 136093745837631833, guid: c230c3c7a76675d489e2e3f1bde199c3,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.135
-      objectReference: {fileID: 0}
-    - target: {fileID: 136093745837631833, guid: c230c3c7a76675d489e2e3f1bde199c3,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.013
-      objectReference: {fileID: 0}
-    - target: {fileID: 136093745837631833, guid: c230c3c7a76675d489e2e3f1bde199c3,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 136093745837631833, guid: c230c3c7a76675d489e2e3f1bde199c3,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 136093745837631833, guid: c230c3c7a76675d489e2e3f1bde199c3,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 136093745837631833, guid: c230c3c7a76675d489e2e3f1bde199c3,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 81.30801
-      objectReference: {fileID: 0}
-    - target: {fileID: 136093745837631833, guid: c230c3c7a76675d489e2e3f1bde199c3,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -2.357
-      objectReference: {fileID: 0}
-    - target: {fileID: 136093745837631833, guid: c230c3c7a76675d489e2e3f1bde199c3,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -183.855
-      objectReference: {fileID: 0}
-    - target: {fileID: 2140949521873899030, guid: c230c3c7a76675d489e2e3f1bde199c3,
-        type: 3}
-      propertyPath: ShapeModule.angle
-      value: 11.32
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c230c3c7a76675d489e2e3f1bde199c3, type: 3}
 --- !u!4 &2186146534719249196 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 667530279663149154, guid: c230c3c7a76675d489e2e3f1bde199c3,
-    type: 3}
-  m_PrefabInstance: {fileID: 1663319133171219278}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &766568302751380824 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 2140949521873899030, guid: c230c3c7a76675d489e2e3f1bde199c3,
     type: 3}
   m_PrefabInstance: {fileID: 1663319133171219278}
   m_PrefabAsset: {fileID: 0}

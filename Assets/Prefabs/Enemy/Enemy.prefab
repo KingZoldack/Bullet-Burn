@@ -224,7 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9be5361c3e5d85f4ab68b4130678fcc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _target: {fileID: 0}
+  _target: {fileID: 312809697733976255, guid: ce233b95352b4f8488aa4dff5fe30354, type: 3}
   _chaseRange: 10
   _radiusColor: {r: 0.13519046, g: 0.17994156, b: 0.9245283, a: 1}
 --- !u!114 &7751775777643380963

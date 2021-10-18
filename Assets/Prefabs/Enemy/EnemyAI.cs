@@ -23,11 +23,6 @@ public class EnemyAI : MonoBehaviour
         _anim = GetComponent<Animator>();
     }
 
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         _distanceToTarget = Vector3.Distance(_target.position, transform.position);
@@ -46,8 +41,8 @@ public class EnemyAI : MonoBehaviour
 
     void EngageTarget()
     {
-        //transform.LookAt(_target);
         LookAtPlayer();
+
         if (_distanceToTarget >= _navMeshAgent.stoppingDistance)
         {
             ChaseTarget();
@@ -64,14 +59,11 @@ public class EnemyAI : MonoBehaviour
         
         Vector3 direction = (_target.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-        Quaternion.Slerp(lookRotation, transform.rotation, _rotationSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(lookRotation, transform.rotation, _rotationSpeed * Time.deltaTime);
     }
 
     void ChaseTarget()
     {
-        //LookAtPlayer();
-
-        //transform.LookAt(_target);
         _anim.SetBool(Tags.ENEMY_ATTACK_TAG, false);
         _anim.SetTrigger(Tags.ENEMY_MOVE_TAG);
         _navMeshAgent.SetDestination(_target.position);
@@ -79,10 +71,6 @@ public class EnemyAI : MonoBehaviour
 
     void AttackTarget()
     {
-        //LookAtPlayer();
-
-        //transform.LookAt(_target);
-
         _anim.SetBool(Tags.ENEMY_ATTACK_TAG, true);
     }
 
