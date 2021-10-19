@@ -343,6 +343,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf6ee18f3a37cad42b1f367af48c2db0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _ammoSlots:
+  - _ammoType: 0
+    _ammoAmount: 30
+  - _ammoType: 1
+    _ammoAmount: 50
+  - _ammoType: 2
+    _ammoAmount: 12
 --- !u!114 &2580835642554999915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -356,6 +363,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ammoSlot: {fileID: 1958476347444759989}
+  ammoType: 1
   _FPCamera: {fileID: 312809697732443837}
   _hitEffect: {fileID: 1772738262270883051, guid: 5a62588c34ac1014aa8d81de0d89c546,
     type: 3}
@@ -377,6 +385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ammoSlot: {fileID: 1958476347444759989}
+  ammoType: 2
   _FPCamera: {fileID: 312809697732443837}
   _hitEffect: {fileID: 1772738262270883051, guid: 5a62588c34ac1014aa8d81de0d89c546,
     type: 3}
@@ -394,6 +403,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5966052401449904611}
+  - component: {fileID: 8464957237454372644}
   m_Layer: 0
   m_Name: Weapons
   m_TagString: Untagged
@@ -418,6 +428,19 @@ Transform:
   m_Father: {fileID: 312809697733976253}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -3.176, y: -11.782001, z: 0}
+--- !u!114 &8464957237454372644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8464957237454372643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70b3ee89344828642af9ca010cb5e510, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _currentWeapon: 0
 --- !u!1001 &1663319133171219278
 PrefabInstance:
   m_ObjectHideFlags: 0

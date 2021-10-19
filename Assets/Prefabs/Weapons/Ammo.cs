@@ -4,16 +4,40 @@ using UnityEngine;
 
 public class Ammo : MonoBehaviour
 {
-    public int _ammoAmount { get;  private set; } = 25 ;
-    // Start is called before the first frame update
-    
-    public int GetCurrentAmmo()
+    [SerializeField] AmmoSlot[] _ammoSlots;
+
+    [System.Serializable]
+    private class AmmoSlot
     {
-        return _ammoAmount;
+        public AmmoType _ammoType;
+        public int _ammoAmount;
     }
 
-    public void DecreaseCurrentAmmo()
+    public int GetCurrentAmmo(AmmoType ammoType)
     {
-        _ammoAmount--;
+        return GetAmmoSlot(ammoType)._ammoAmount;
+    }
+
+    public void IncreaseCurrentAmmo(AmmoType ammoType, int ammoAmount)
+    {
+        GetAmmoSlot(ammoType)._ammoAmount += ammoAmount;
+    }
+
+    public void DecreaseCurrentAmmo(AmmoType ammoType)
+    {
+        GetAmmoSlot(ammoType)._ammoAmount--;
+    }
+
+    private AmmoSlot GetAmmoSlot(AmmoType ammoType)
+    {
+        foreach (var slot in _ammoSlots)
+        {
+            if (slot._ammoType == ammoType)
+            {
+                return slot;
+            }
+        }
+
+        return null;
     }
 }

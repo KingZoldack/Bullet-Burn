@@ -22,16 +22,15 @@ public class WeaponZoom : MonoBehaviour
     {
         _fpsController = GetComponentInParent<RigidbodyFirstPersonController>();
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
         ProcessFOV();
+    }
+
+    private void OnDisable()
+    {
+        ZoomOut();
     }
 
     void ProcessFOV()
@@ -40,20 +39,30 @@ public class WeaponZoom : MonoBehaviour
         {
             if (!_isZoomed)
             {
-                _isZoomed = true;
-                _mainCamera.fieldOfView = _zoomedIn;
-                _fpsController.mouseLook.XSensitivity = _zoomedInSens;
-                _fpsController.mouseLook.YSensitivity = _zoomedInSens;
+                ZoomIn();
             }
 
             else if (_isZoomed)
             {
-                _isZoomed = false;
-                _mainCamera.fieldOfView = _zoomedOut;
-                _fpsController.mouseLook.XSensitivity = _zoomedOutSens;
-                _fpsController.mouseLook.YSensitivity = _zoomedOutSens;
+                ZoomOut();
             }
 
         }
+    }
+
+    private void ZoomIn()
+    {
+        _isZoomed = true;
+        _mainCamera.fieldOfView = _zoomedIn;
+        _fpsController.mouseLook.XSensitivity = _zoomedInSens;
+        _fpsController.mouseLook.YSensitivity = _zoomedInSens;
+    }
+
+    private void ZoomOut()
+    {
+        _isZoomed = false;
+        _mainCamera.fieldOfView = _zoomedOut;
+        _fpsController.mouseLook.XSensitivity = _zoomedOutSens;
+        _fpsController.mouseLook.YSensitivity = _zoomedOutSens;
     }
 }

@@ -6,6 +6,7 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     [SerializeField] Ammo _ammoSlot;
+    [SerializeField] AmmoType ammoType;
     [SerializeField] Camera _FPCamera;
     [SerializeField] GameObject _hitEffect;
     [SerializeField] ParticleSystem _muzzleFlash;
@@ -15,6 +16,11 @@ public class Weapon : MonoBehaviour
     [SerializeField] float _timeBetweenShots;
 
     bool _canShoot = true;
+
+    private void OnEnable()
+    {
+        _canShoot = true;
+    }
 
     void Update()
     {
@@ -28,9 +34,9 @@ public class Weapon : MonoBehaviour
     {
         //Add SMG fire rate functionality.
         _canShoot = false;
-        if (_ammoSlot._ammoAmount > 0)
+        if (_ammoSlot.GetCurrentAmmo(ammoType) > 0)
         {
-            _ammoSlot.DecreaseCurrentAmmo();
+            _ammoSlot.DecreaseCurrentAmmo(ammoType);
             ProcessMuzzleFlash();
             ProcessRaycast();
         }
