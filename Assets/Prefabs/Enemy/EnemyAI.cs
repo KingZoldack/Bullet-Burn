@@ -25,6 +25,12 @@ public class EnemyAI : MonoBehaviour
 
     void Update()
     {
+        if (EnemyHealth.instance.IsDead())
+        {
+            enabled = false;
+            _navMeshAgent.enabled = false;
+        }
+
         _distanceToTarget = Vector3.Distance(_target.position, transform.position);
 
         if (_isProvoked)
@@ -77,6 +83,7 @@ public class EnemyAI : MonoBehaviour
     void AttackTarget()
     {
         _anim.SetBool(Tags.ENEMY_ATTACK_TAG, true);
+        GetComponent<EnemyAttack>().AttackHitEvent();
     }
 
     private void OnDrawGizmosSelected()

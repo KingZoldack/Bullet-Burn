@@ -9,7 +9,7 @@ public class AmmoPickup : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == Tags.PLAYER_TAG)
         {
             FindObjectOfType<Ammo>().IncreaseCurrentAmmo(_typeOfAmmo, _amountOfAmmoToGive);
             Destroy(this.gameObject);
