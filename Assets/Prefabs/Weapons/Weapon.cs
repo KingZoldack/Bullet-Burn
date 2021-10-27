@@ -12,7 +12,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] ParticleSystem _muzzleFlash;
     [SerializeField] float _bulletImapctLiftime = 0.1f;
     [SerializeField] float _range = 100f;
-    [SerializeField] float _clipperBulletDamage = 20f;
+    [SerializeField] float _bulletDamage = 20f;
     [SerializeField] float _timeBetweenShots;
 
     bool _canShoot = true;
@@ -58,7 +58,7 @@ public class Weapon : MonoBehaviour
             Debug.Log($"{hit.transform.name} was shot at.");
             EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
             if (target == null) return;
-            target.TakeDamage(_clipperBulletDamage);
+            target.TakeDamage(_bulletDamage);
         }
 
         else
